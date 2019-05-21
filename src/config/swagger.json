@@ -1,0 +1,45 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0"
+  },
+  "host": "localhost:4600",
+  "basePath": "/api/v1",
+  "schemes": ["http"],
+  "produces": ["application/json"],
+  "paths": {
+    "/search": {
+      "get": {
+        "tags": ["Search Text"],
+        "summary": "Search git users by username and programming language",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "content": {
+          "application/json": {}
+        },
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Specifies username to search",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "Specifies programming language",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  }
+}
