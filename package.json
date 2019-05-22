@@ -4,7 +4,7 @@
   "description": "API endpoint to get users from github",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm tsc",
+    "postinstall": "npx tsc",
     "test": "jest --coverage --verbose",
     "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
     "start": "node ./dist/server.js"

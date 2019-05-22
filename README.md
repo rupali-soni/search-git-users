@@ -1,12 +1,17 @@
 # Search Git Users
 
-# Prerequisites
+## Prerequisites
 * npm 6+
 * node.js 10+
 
-# Getting started
+## Getting started
 
-1. Checkout the repository and use the dockerfile to build docker image on your system. 
+1. Checkout the repository and move to the created repository in terminal and hit
+
+```npm install```
+
+
+Now use the dockerfile to build docker image on your system. 
 Please follow the steps mentioned below:
 
 2. To build the image (Please mind the "." at the end)
