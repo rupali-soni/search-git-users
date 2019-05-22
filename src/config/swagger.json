@@ -34,7 +34,7 @@
           {
             "name": "language",
             "in": "query",
-            "description": "Specifies programming language",
+            "description": "Specifies comma separated programming languages",
             "required": true,
             "type": "string"
           }

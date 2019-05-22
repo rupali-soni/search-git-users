@@ -1,14 +1,16 @@
 import request from "request-promise";
 
+export const gitApiHost = 'https://api.github.com';
+
 export const getUsers = async (username: string, language: string) => {
-    console.log(`https://api.github.com/search/users?q=${username}in:login:${username}+language:${language}`);
     var options = {
-        uri: `https://api.github.com/search/users?q=${username}+in:login:${username}+language:${language}`,
+        uri: gitApiHost + `/search/users?q=${username} +in:login+language:${language}`,
         headers: {
             'User-Agent': 'node.js'
         },
+        timeout:30000,
         json: true // Automatically parses the JSON string in the response
     };
-    const response = await request(options);
+    const response = await request( options );
     return response;
 };
