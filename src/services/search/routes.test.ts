@@ -23,4 +23,14 @@ describe("routes", () => {
         const response = await request(router).get("/api/v1/search?username=hajshd ajhsdjasdhk&language=tempoasdp");
         expect(response.status).toEqual(200);
     });
+
+    test("a non-existing api method", async () => {
+        const response = await request(router).get("/api/v11/search");
+        expect(response.status).toEqual(404);
+    });
+
+    test("an empty string", async () => {
+        const response = await request(router).get("/api/v1/search?q=");
+        expect(response.status).toEqual(500);
+    });
 });
