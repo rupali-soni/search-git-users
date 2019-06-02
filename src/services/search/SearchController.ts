@@ -14,7 +14,7 @@ export const getGitUsers = async (username: string, languageArray: Array<string>
         if ( false != searchResults && 0 !== searchResults.total_count ) {
             for (let item of searchResults.items) {
                 let additionalUserDetails = await getUserDetails(item.id);
-                let name = null;
+                let name = '';
                 let numberOfFollowers = 0;
                 if (additionalUserDetails != false && ("name" in additionalUserDetails) == true) {
                     name = additionalUserDetails.name;

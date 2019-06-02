@@ -9,4 +9,9 @@ describe("githubDataProvider", () => {
         const result = await Provider.getUsers("hajshd ajhsdjasdhk", 'tempoasdp');
         expect(result).toEqual('[]');
     });
+
+    test("an invalid non-json response", async () => {
+        (request as any).mockImplementation(() => Promise.reject("Service Unavailable.") );
+        await expect( Provider.getUsers("",'' ) ).rejects.toEqual("Service Unavailable.");
+    });
 });
